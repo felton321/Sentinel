@@ -20,6 +20,10 @@ package com.alibaba.csp.sentinel.slots.block;
  *
  * @author youji.zj
  */
+
+/**
+ * felton
+ */
 public interface Rule {
 
     /**
