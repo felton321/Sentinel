@@ -21,9 +21,11 @@ package com.alibaba.csp.sentinel.slots.block;
  * @author youji.zj
  */
 
-/**
+/*
  * felton
- */
+ * @Date 下午9:33 2021/7/12
+ * 规则的顶层接口
+ **/
 public interface Rule {
 
     /**

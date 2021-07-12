@@ -34,6 +34,11 @@ import static com.alibaba.csp.sentinel.util.ConfigUtil.addSeparator;
  * @author Carpenter Lee
  * @author Eric Zhao
  */
+/*
+ * felton
+ * @Date 下午11:14 2021/7/12
+ * 创建出日志目录，初始化日志文件名称等
+ **/
 public class LogBase {
 
     public static final String LOG_DIR = "csp.sentinel.log.dir";

@@ -24,6 +24,13 @@ import com.alibaba.csp.sentinel.slots.block.RuleConstant;
  *
  * @author jialiang.linjl
  */
+/*
+ * felton
+ * @Date 下午10:34 2021/7/12
+ * 顺序如下：
+ * 1.clusterMode
+ * 2. limit app default
+ **/
 public class FlowRuleComparator implements Comparator<FlowRule> {
 
     @Override

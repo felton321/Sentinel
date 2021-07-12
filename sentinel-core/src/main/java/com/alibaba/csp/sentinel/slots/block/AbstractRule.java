@@ -37,6 +37,11 @@ public abstract class AbstractRule implements Rule {
      * For authority rules, multiple origin name can be separated with comma (',').
      * </p>
      */
+    /*
+     * felton
+     * @Date 下午9:34 2021/7/12
+     * 流控针对的调用来源，在子类flowRule中默认是"default"
+     **/
     private String limitApp;
 
     @Override
@@ -58,6 +63,11 @@ public abstract class AbstractRule implements Rule {
         return this;
     }
 
+    /*
+     * felton
+     * @Date 下午9:37 2021/7/12
+     * 必须resource和limitApp都一样
+     **/
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -78,6 +88,11 @@ public abstract class AbstractRule implements Rule {
         return true;
     }
 
+    /*
+     * felton
+     * @Date 下午9:38 2021/7/12
+     * "" 和 "default" 是相等的
+     **/
     private boolean limitAppEquals(String str1, String str2) {
         if ("".equals(str1)) {
             return RuleConstant.LIMIT_APP_DEFAULT.equals(str2);
