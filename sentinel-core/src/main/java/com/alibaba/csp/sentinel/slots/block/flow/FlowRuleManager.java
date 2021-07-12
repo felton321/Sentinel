@@ -51,8 +51,20 @@ public class FlowRuleManager {
     private static volatile Map<String, List<FlowRule>> flowRules = new HashMap<>();
 
     private static final FlowPropertyListener LISTENER = new FlowPropertyListener();
+
+    /*
+     * felton
+     * @Date 下午11:04 2021/7/12
+     * 可以动态更新的配置，使用最简单的观察者模式，当有更新时全量覆盖flowRules
+     **/
     private static SentinelProperty<List<FlowRule>> currentProperty = new DynamicSentinelProperty<List<FlowRule>>();
 
+    /*
+     * felton
+     * @Date 下午9:49 2021/7/12
+     * 定时打印metrics信息
+     * 线程名为: sentinel-metrics-record-task-thread-{递增序号}
+     **/
     @SuppressWarnings("PMD.ThreadPoolCreationRule")
     private static final ScheduledExecutorService SCHEDULER = Executors.newScheduledThreadPool(1,
         new NamedThreadFactory("sentinel-metrics-record-task", true));
@@ -79,6 +91,7 @@ public class FlowRuleManager {
                 SentinelConfig.METRIC_FLUSH_INTERVAL);
             return;
         }
+
         SCHEDULER.scheduleAtFixedRate(new MetricTimerListener(), 0, flushInterval, TimeUnit.SECONDS);
     }
 

@@ -21,6 +21,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Wrapped thread factory for better use.
  */
+/*
+ * felton
+ * @Date 下午9:48 2021/7/12
+ * 给线程池中的线程命名
+ **/
 public class NamedThreadFactory implements ThreadFactory {
 
     private final ThreadGroup group;

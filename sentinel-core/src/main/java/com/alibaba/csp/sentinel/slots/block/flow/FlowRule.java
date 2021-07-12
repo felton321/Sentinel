@@ -63,6 +63,11 @@ public class FlowRule extends AbstractRule {
      * {@link RuleConstant#STRATEGY_RELATE} for relevant flow control (with relevant resource);
      * {@link RuleConstant#STRATEGY_CHAIN} for chain flow control (by entrance resource).
      */
+    /*
+     * felton
+     * @Date 下午9:40 2021/7/12
+     * 直接，链路和关联三种流控模式，默认是直接
+     **/
     private int strategy = RuleConstant.STRATEGY_DIRECT;
 
     /**
@@ -74,6 +79,11 @@ public class FlowRule extends AbstractRule {
      * Rate limiter control behavior.
      * 0. default(reject directly), 1. warm up, 2. rate limiter, 3. warm up + rate limiter
      */
+    /*
+     * felton
+     * @Date 下午9:42 2021/7/12
+     * 0：直接拒绝，1：慢启动，2：排队，3：慢启动+排队
+     **/
     private int controlBehavior = RuleConstant.CONTROL_BEHAVIOR_DEFAULT;
 
     private int warmUpPeriodSec = 10;
@@ -92,6 +102,11 @@ public class FlowRule extends AbstractRule {
     /**
      * The traffic shaping (throttling) controller.
      */
+    /*
+     * felton
+     * @Date 下午9:44 2021/7/12
+     * 流量整形控制器
+     **/
     private TrafficShapingController controller;
 
     public int getControlBehavior() {

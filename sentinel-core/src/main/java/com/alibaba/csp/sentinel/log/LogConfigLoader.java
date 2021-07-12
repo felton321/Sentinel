@@ -15,6 +15,7 @@
  */
 package com.alibaba.csp.sentinel.log;
 
+import com.alibaba.csp.sentinel.config.SentinelConfigLoader;
 import com.alibaba.csp.sentinel.util.ConfigUtil;
 import com.alibaba.csp.sentinel.util.StringUtil;
 
@@ -28,6 +29,11 @@ import java.util.concurrent.CopyOnWriteArraySet;
  * @author lianglin
  * @since 1.7.0
  */
+/*
+ * felton
+ * @Date 下午11:10 2021/7/12
+ * 跟SentinelConfigLoader基本一样的功能，加载日志配置项
+ **/
 public class LogConfigLoader {
 
     public static final String LOG_CONFIG_ENV_KEY = "CSP_SENTINEL_CONFIG_FILE";

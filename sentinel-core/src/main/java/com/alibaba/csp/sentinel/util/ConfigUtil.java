@@ -35,6 +35,14 @@ import java.util.Properties;
  * @author lianglin
  * @since 1.7.0
  */
+/*
+ * felton
+ * @Date 下午10:15 2021/7/12
+ * 按照如下顺序加载配置：
+ * 1. 绝对路径
+ * 2. classPath
+ * 3. user.dir下的相对路径
+ **/
 public final class ConfigUtil {
 
     public static final String CLASSPATH_FILE_FLAG = "classpath:";

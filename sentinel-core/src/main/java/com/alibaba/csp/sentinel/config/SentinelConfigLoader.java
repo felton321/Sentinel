@@ -33,6 +33,15 @@ import static com.alibaba.csp.sentinel.util.ConfigUtil.addSeparator;
  * @author lianglin
  * @since 1.7.0
  */
+/*
+ * felton
+ * @Date 下午10:08 2021/7/12
+ * 初始化时就加载配置文件，顺序如下:
+ * 1. 先从系统变量csp.sentinel.config.file中得到文件名
+ * 2. 再从环境变量CSP_SENTINEL_CONFIG_FILE中得到文件名
+ * 3. 再从classpath中查找classpath:sentinel.properties
+ * 4. 最后用System.properties里面的配置项覆盖配置文件中读取的配置项，如果没有相同的key，则直接取并集
+ **/
 public final class SentinelConfigLoader {
 
     public static final String SENTINEL_CONFIG_ENV_KEY = "CSP_SENTINEL_CONFIG_FILE";

@@ -34,6 +34,11 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author Eric Zhao
  * @since 1.4.0
  */
+/*
+ * felton
+ * @Date 下午11:00 2021/7/12
+ * 按照 resourceName -> List<FlowRule> 构造map
+ **/
 public final class FlowRuleUtil {
 
     /**

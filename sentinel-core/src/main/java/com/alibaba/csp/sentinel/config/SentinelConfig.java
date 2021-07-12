@@ -71,9 +71,29 @@ public final class SentinelConfig {
 
     static {
         try {
+            /*
+             * felton
+             * @Date 下午10:07 2021/7/12
+             * 设置default值
+             **/
             initialize();
+            /*
+             * felton
+             * @Date 下午10:26 2021/7/12
+             * 将配置文件和系统变量全部合并进来
+             **/
             loadProps();
+            /*
+             * felton
+             * @Date 下午10:29 2021/7/12
+             * 得到appName
+             **/
             resolveAppName();
+            /*
+             * felton
+             * @Date 下午10:30 2021/7/12
+             * 得到appType
+             **/
             resolveAppType();
             RecordLog.info("[SentinelConfig] Application type resolved: {}", appType);
         } catch (Throwable ex) {
